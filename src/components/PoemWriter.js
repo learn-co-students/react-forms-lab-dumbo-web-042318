@@ -12,12 +12,12 @@ class PoemWriter extends React.Component {
 
   handleChange = event => {
     const value = event.target.value;
-    const lines = value.split('\n');
+    const lines = value.split('\n').map(line => line.trim());
     const words = lines.map(line => line.split(" ").length).join();
 
     console.log(words);
     this.setState({value: value})
-    if ( words === "6,4,6" || words === "6,6,8" ) {
+    if ( words === "5,3,5" ) {
       this.setState({invalid: false})
     }
   }
